@@ -38,6 +38,10 @@ var esb = http.createServer(function (req, res) {
       xhr.send()
       break
     case 'courier':
+      // update status order tu client
+      xhr = new XMLHttpRequest()
+      xhr.open('POST', 'http://' + host + ':14810/0', true)
+      xhr.send()
       break
   }
 
