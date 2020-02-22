@@ -19,13 +19,23 @@ var esb = http.createServer(function (req, res) {
   // opt[1] who is calling esb
   // opt[2] data
   var opt = req.url.split('/')
+  var xhr
   switch (opt[1]) {
     case 'client':
-      var xhr = new XMLHttpRequest()
+      xhr = new XMLHttpRequest()
       xhr.open('POST', 'http://' + host + ':48101/' + opt[2], true)
       xhr.send()
       break
     case 'restaurant':
+      // update status order to client
+      xhr = new XMLHttpRequest()
+      xhr.open('POST', 'http://' + host + ':14810/1', true)
+      xhr.send()
+
+      // send order deliver to courier
+      xhr = new XMLHttpRequest()
+      xhr.open('POST', 'http://' + host + ':18104/' + opt[2], true)
+      xhr.send()
       break
     case 'courier':
       break
