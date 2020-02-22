@@ -21,14 +21,9 @@ var rst = http.createServer(function (req, res) {
   while (true) {
     order = input.question('Tienes un pedido de:' + req.url + '/\nse encuentra listo (S/n)?\n')
     if (order === 'S') {
-      // update status order to client
+      // notify ESB that order is ready for update status to client and notify courier
       var xhr = new XMLHttpRequest()
-      xhr.open('POST', 'http://' + host + ':14810/1', true)
-      xhr.send()
-
-      // send order deliver to courier
-      xhr = new XMLHttpRequest()
-      xhr.open('POST', 'http://' + host + ':18104' + req.url, true)
+      xhr.open('POST', 'http://' + host + ':2013/restaurant' + req.url, true)
       xhr.send()
 
       res.end()
