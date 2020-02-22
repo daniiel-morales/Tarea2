@@ -21,9 +21,9 @@ var cor = http.createServer(function (req, res) {
   while (true) {
     order = input.question('Debes entregar el pedido de:' + req.url + '/\nterminado (S/n)?\n')
     if (order === 'S') {
-      // update status order tu client
+      // notify ESB that order has been delivered
       var xhr = new XMLHttpRequest()
-      xhr.open('POST', 'http://' + host + ':14810/0', true)
+      xhr.open('POST', 'http://' + host + ':2013/courier', true)
       xhr.send()
 
       res.end()
