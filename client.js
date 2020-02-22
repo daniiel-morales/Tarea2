@@ -18,9 +18,9 @@ var order
 
 order = input.question('Bienvenido\n Que deseas ordenar?\n')
 
-// send request order for restaurant
+// send request order to ESB for restaurant
 var xhr = new XMLHttpRequest()
-xhr.open('POST', 'http://' + host + ':48101/' + order, true)
+xhr.open('POST', 'http://' + host + ':2013/client/' + order, true)
 xhr.send()
 
 console.log('Tu orden de: ' + order + ' esta en proceso...')

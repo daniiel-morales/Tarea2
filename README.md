@@ -17,7 +17,11 @@ run $ node restaurant.js
 
 next start the courier.js service
 
-runt $ node courier.js
+run $ node courier.js
+
+next start the esb.js service
+
+run $ node esb.js
 
 then when can start the client.js service
 
@@ -27,7 +31,7 @@ Next the service will ask 'what you want to order?'
 
 write in terminal << input value >> 
 
-Then press enter for send the order to restaurant
+Then press enter for send the order to ESB that will comunicate to restaurant
 
 go to the restaurant service you will see
 
