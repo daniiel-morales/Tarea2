@@ -1,4 +1,4 @@
-# Tarea 3
+# Tarea 4
 Aplicación SOA que simula un servicio de crowdsourcing de comida a domicilio
 
 ## Instalation
@@ -48,3 +48,7 @@ You have to deliver: << value >> submited? (Y/n)?
 Press Y for send and end status of order to the client
 
 And the client finish the service order
+
+Last with added GULPJS
+
+just run gulp in the repo folder for zipp commit push and tag a new release
